@@ -6,12 +6,9 @@ public class CustomDouble {
     public int a;
     public double b;
 
-    public CustomDouble (final int a, final double b) {
-        this.a = a;
-        if(b >= 0.0 && b < 1)
-            this.b = b;
-        else
-            this.b = b % 1;
+    public CustomDouble(final double result) {
+        this.a = (int) result;
+        this.b = result - b;
     }
 
     public int getA() {
@@ -27,26 +24,20 @@ public class CustomDouble {
     }
 
     public void setB(final double b) {
-        if(b >= 0.0 && b < 1)
+        if(b < 1)
             this.b = b;
         else
             this.b = b % 1;
     }
 
-    public CustomDouble sum(final CustomDouble s){
-        final CustomDouble k;
-        final CustomDouble r = new CustomDouble(0, 0);
-        r.a = a + s.getA();
-        r.b = b + s.getB();
-        if(b > 1){
-
-        }
-        return r;
+    public CustomDouble sum(final CustomDouble number2){
+        final double result = this.toDouble() + number2.toDouble();
+        return new CustomDouble(result);
     }
 
-    public CustomDouble subtraction(final CustomDouble sub){
-
-        return new CustomDouble(a - sub.a, b - sub.b);
+    public CustomDouble subtraction(final CustomDouble number2){
+        final double result = this.toDouble() - number2.toDouble();
+        return new CustomDouble(result);
     }
 
     @Override
