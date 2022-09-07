@@ -27,6 +27,6 @@ public class ProductPair {
     public String toString() { return String.format(" Product = {" + "product=" + product + ", count=" + count + '}'); }
 
     public int fullPrice() {
-        return product.getPrice() * count;
+        return this.product.getPrice() * count;
     }
 }
